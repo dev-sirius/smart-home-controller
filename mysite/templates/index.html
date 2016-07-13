@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% load staticfiles %}
+        <title>Smart home controller</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+        <script src="{% static 'js/jquery.knob.js' %}"></script>
+        <script>
+            $(function() {
+                $(".knob").knob();
+
+                // Example of infinite knob, iPod click wheel
+                var val,up=0,down=0,i=0
+                    ,$idir = $("div.idir")
+                    ,$ival = $("div.ival")
+                    ,incr = function() { i++; $idir.show().html("+").fadeOut(); $ival.html(i); }
+                    ,decr = function() { i--; $idir.show().html("-").fadeOut(); $ival.html(i); };
+                $("input.infinite").knob(
+                                    {
+                                    'min':0
+                                    ,'max':20
+                                    ,'stopper':false
+                                    ,'change':function(v){
+                                                if(val>v){
+                                                    if(up){
+                                                        decr();
+                                                        up=0;
+                                                    }else{up=1;down=0;}
+                                                }else{
+                                                    if(down){
+                                                        incr();
+                                                        down=0;
+                                                    }else{down=1;up=0;}
+                                                }
+                                                val=v;
+                                            }
+                                    }
+                                    );
+
+
+                // Automatic mode
+                /*var autoVal = 0
+                    ,timer = setInterval(function() {
+                        $(".knob").each(
+                                function(){
+                                    $(this)
+                                        .val(Math.round(Math.sin(autoVal)*100))
+                                        .trigger('change');
+                                }
+                            );
+                        autoVal++;
+                    }, 100);*/
+
+                 // Configure
+                 /*$(".knob").val(25).trigger(
+                            "configure",
+                            {"min":10, "max":40, "fgColor":"#FF0000", "skin":"tron", "cursor":true}
+                            );*/
+
+                 // Change example
+                 /*$(".knob").knob(
+                                {
+                                'change':function(e){
+                                        console.log(e);
+                                    }
+                                }
+                            )
+                           .val(79)
+                           ;*/
+            });
+        </script>
+        <style>
+            h2{color:#87CEEB;font-family:'Georgia';}
+        </style>
+    </head>
+    <body>
+        <div style="clear:both"></div>
+        <div style="float:left; width:300px; height:320px; padding:20px; background-color:#222; color:#fff">
+            <h2>Temperature</h2>
+            <input class="knob" data-cursor=true data-min="10" data-max="50" data-skin="tron" data-ticks="8" data-fgColor="#fff" value="{{ temperature }}">
+        </div>
+
+
+        </body>
+</html>
