@@ -30,3 +30,4 @@ def apiUpdate(request):
     elif request.method == 'POST':
         jsonPost = request.POST['json']
         return HttpResponse(jsonparse.jsonExtecude(jsonPost))
+    return HttpResponse('<h1>We need an request</h1>')
