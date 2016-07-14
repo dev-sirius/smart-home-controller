@@ -53,7 +53,7 @@ MIDDLEWARE_CLASSES = [
 
 ROOT_URLCONF = 'mysite.urls'
 
-STATIC_ROOT = '/home/pi/Documents/mysite/files/static/'
+STATIC_ROOT = '/home/pi/Documents/smart-home-controller/mysite/files/static/'
 STATIC_URL = '/static/'
 
 
@@ -66,7 +66,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            '/home/pi/Documents/mysite/templates'
+            '/home/pi/Documents/smart-home-controller/mysite/templates'
         ],
         'APP_DIRS': True,
         'OPTIONS': {

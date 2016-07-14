@@ -14,7 +14,7 @@ def temp(request):
 		return resp
 
 def index(request):
-    return render_to_response('index.html', {})
+	return render_to_response('index.html', {})
 
 def API(request):
 	if request.method == 'GET':
