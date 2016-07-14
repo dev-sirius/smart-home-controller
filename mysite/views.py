@@ -13,10 +13,8 @@ def temp(request):
         resp.write('Required argument not found.')
         return resp
 
-
 def index(request):
     return render_to_response('index.html', {})
-
 
 def API(request):
     if request.method == 'GET':
