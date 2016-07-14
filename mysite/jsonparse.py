@@ -1,10 +1,8 @@
 import json
 
-def jsonExtecude():
+def jsonExtecude(text):
     G_Temperature = 10
     G_Switch = True
-
-    text = input()
 
     try:
         etext = json.loads(text)
@@ -16,18 +14,19 @@ def jsonExtecude():
     except KeyError:
         print('Required argument (method) not found')
 
-    if Method == 'update':
+    if Method == 'UPDATE':
         try:
             Type = etext['type']
 
-            if Type == 'temperature':
+            if Type == 'TEMPERATURE':
                 try:
                     temperature = etext['temperature']
                     G_Temperature = temperature
+                    return G_Temperature
                 except KeyError:
                     pass
 
-            elif Type == 'speed':
+            elif Type == 'SPEED':
                 try:
                     switch = etext['switch']
                     G_Switch = switch

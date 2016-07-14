@@ -1,4 +1,5 @@
 from django.http import HttpResponse
+from . import jsonparse
 from django.shortcuts import render_to_response
 import os
 
@@ -22,3 +23,11 @@ def API(request):
         pass
     elif request.method == 'POST':
         pass
+
+
+def apiUpdate(request):
+    if request.method == 'GET':
+        pass
+    elif request.method == 'POST':
+        jsonPost = request.POST['json']
+        return HttpResponse(jsonparse.jsonExtecude(jsonPost))
