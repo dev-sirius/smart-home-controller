@@ -29,6 +29,6 @@ def apiUpdate(request):
         pass
     elif request.method == 'POST':
         #jsonPost = request.POST['json']
-        jsonPost = str(request.POST.get('json'))
+        jsonPost = str(request.POST.get())
         return HttpResponse(jsonPost)
     return HttpResponse('<h1>We need a request</h1>')
