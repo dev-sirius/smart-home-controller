@@ -4,6 +4,7 @@ from smarthouse.models import Arduino,Log
 from django.utils import timezone
 import hashlib
 
+
 def verificate(request):
     json = request[32:]
     rhash = request[:32]
@@ -46,7 +47,7 @@ def jsonExecute(text):
                     light = etext['light_switch']
                     id_a = etext['id']
                     Log.objects.create(type=Type, id_arduino=id_a, value=light, date=timezone.now())
-                    return 'Hooray!!!!!'
+                    return 'Hooray!!!!?'
                 except KeyError:
                     pass
         except KeyError:
