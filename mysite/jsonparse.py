@@ -39,13 +39,3 @@ def jsonExtecude(text):
                     pass
         except KeyError:
             return 'Required argument (type) not found'
-
-    if Method == 'LOGIN':
-        try:
-            Type = etext['type']
-
-            if Type == 'NEURO':
-                is_login = etext['isLogin']
-                
-        except KeyError:
-            pass
