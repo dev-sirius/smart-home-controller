@@ -5,7 +5,6 @@ from django.utils import timezone
 def jsonExtecude(text):
     transporter = Transport.TransportProtocol()
 
-
     try:
         etext = json.loads(text)
     except ValueError:

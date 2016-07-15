@@ -10,7 +10,7 @@ class TransportProtocol:
         elif arduino.conn_type == 'rd':
             self.send433(packet, arduino)
 
-    '''def AES_encode(packet, key):
+    def AES_encode(packet, key):
         pass
 
     # return AES_encode
@@ -24,7 +24,7 @@ class TransportProtocol:
 
     def decode(self, spacket, key):
         return self.AES_decode(spacket, key)
-    '''
+
     # send to sensors using Wi-Fi
     def sendWIFI(package, arduino):
         ip = arduino.ip
