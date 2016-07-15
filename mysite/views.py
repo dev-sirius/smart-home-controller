@@ -22,6 +22,6 @@ def API(request):
         pass
     elif request.method == 'POST':
         jsonPost = str(request.POST.get('json'))
-        return HttpResponse(jsonPost)
+        return HttpResponse(jsonparse.jsonExtecude(jsonPost))
     return HttpResponse('<h1>We need a request</h1>')
 
