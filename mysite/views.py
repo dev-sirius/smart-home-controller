@@ -15,7 +15,7 @@ def temp(request):
         return resp
 
 def index(request):
-    return render_to_response('index.html', {'temperature':dbwork.outOfDB('TEMPERATURE'),'is_light':dbwork.outOfDB('LIGHT')})
+    return render_to_response('index.html', {'temperature':dbwork.outOfDB('TEMPERATURE'),'is_light':str(dbwork.outOfDB('LIGHT').lower())})
 
 def API(request):
     if request.method == 'GET':

@@ -1,13 +1,37 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-    {% load staticfiles %}
-    <meta charset="UTF-8">
-    <title>SMARTHOME</title>
+  {%load staticfiles%}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>SMARTHOME</title>
+  <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+  <script type="text/javascript" src = "jquery.knob.js"></script>-->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
 </head>
 <body>
+  <header>
     <h1>SMARTHOME</h1>
-    <h2>Temperature: {{ temperature }}</h2>
-    <h2>Light: {{ is_light }}</h2>
+  </header>
+  <div class="temp">
+    <h2>Temperature</h2>
+    <p>{{temperature}}</p>
+  </div>
+  <div id="light" >
+    <h2>Light</h2>
+  </div>
+  <script type="text/javascript">
+    elem = document.getElementById('light');
+    alert('sad');
+      if({{light}}){
+        elem.style.background-color = "#fff";
+        elem.style.color = "#000";
+      }else {
+        elem.style.background-color = "#000";
+        elem.style.color = "#fff";
+      }
+  </script>
 </body>
 </html>
