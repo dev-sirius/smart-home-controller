@@ -2,7 +2,20 @@ import json
 from . import Transport
 from smarthouse.models import Arduino,Log
 from django.utils import timezone
-def jsonExtecude(text):
+import hashlib
+
+def verificate(request):
+    json = request[32:]
+    rhash = request[:32]
+    MD5 = hashlib.md5()
+    MD5.update(json.encode())
+    chash = MD5.hexdigest()
+    if rhash == chash:
+        return json
+    else:
+        return None
+
+def jsonExecute(text):
     transporter = Transport.TransportProtocol()
 
     try:

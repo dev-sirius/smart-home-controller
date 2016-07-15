@@ -21,7 +21,11 @@ def API(request):
     if request.method == 'GET':
         pass
     elif request.method == 'POST':
-        jsonPost = str(request.POST.get('json'))
-        return HttpResponse(jsonparse.jsonExtecude(jsonPost))
+        jsonPost = str(request.POST.get('data'))
+        jsons = jsonparse.verificate(jsonPost)
+        if jsons != None:
+            return HttpResponse(jsonparse.jsonExecute(jsons))
+        else:
+            return HttpResponse('Request is corrupted')
     return HttpResponse('<h1>We need a request</h1>')
 
