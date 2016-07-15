@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from . import jsonparse
 from django.shortcuts import render_to_response
 import os
-
+from . import dbwork
 
 def temp(request):
     try:
@@ -15,7 +15,7 @@ def temp(request):
         return resp
 
 def index(request):
-    return render_to_response('index.html', {})
+    return render_to_response('index.html', {'temperature':dbwork.outOfDB('TEMPERATURE'),'is_light':dbwork.outOfDB('LIGHT')})
 
 def API(request):
     if request.method == 'GET':

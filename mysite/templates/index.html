@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    {% load staticfiles %}
     <meta charset="UTF-8">
     <title>SMARTHOME</title>
 </head>
 <body>
     <h1>SMARTHOME</h1>
+    <h2>Temperature: {{ temperature }}</h2>
+    <h2>Light: {{ is_light }}</h2>
 </body>
 </html>
