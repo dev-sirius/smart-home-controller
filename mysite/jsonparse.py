@@ -8,7 +8,7 @@ def jsonExtecude(text):
     try:
         etext = json.loads(text)
     except ValueError:
-        print('Packet is invalid')
+        return 'Packet is invalid'
 
     try:
         Method = etext['method']
@@ -38,4 +38,3 @@ def jsonExtecude(text):
                     pass
         except KeyError:
             return 'Required argument (type) not found'
-
