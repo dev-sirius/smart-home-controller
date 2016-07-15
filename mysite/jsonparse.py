@@ -9,7 +9,7 @@ def jsonExtecude(text):
     try:
         etext = json.loads(text)
     except ValueError:
-        print('Packet is invalid')
+        return 'Packet is invalid'
 
     try:
         Method = etext['method']
