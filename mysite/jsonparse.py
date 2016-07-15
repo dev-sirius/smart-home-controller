@@ -1,8 +1,10 @@
 import json
-
+from . import Transport
+from smarthouse.models import Arduino,Log
+from django.utils import timezone
 def jsonExtecude(text):
-    G_Temperature = 10
-    G_Switch = True
+    transporter = Transport.TransportProtocol()
+
 
     try:
         etext = json.loads(text)
@@ -12,7 +14,7 @@ def jsonExtecude(text):
     try:
         Method = etext['method']
     except KeyError:
-        print('Required argument (method) not found')
+        return 'Required argument (method) not found'
 
     if Method == 'UPDATE':
         try:
@@ -21,20 +23,20 @@ def jsonExtecude(text):
             if Type == 'TEMPERATURE':
                 try:
                     temperature = etext['temperature']
-                    G_Temperature = temperature
-                    return G_Temperature
+                    id_a = etext['id']
+                    Log.objects.create(type = Type,id_arduino = id_a,value =temperature,date = timezone.now())
+                    return 'Hooray!!!!!'
                 except KeyError:
                     pass
 
-            elif Type == 'SPEED':
+            elif Type == 'LIGHT':
                 try:
-                    switch = etext['switch']
-                    G_Switch = switch
+                    light = etext['light_switch']
+                    id_a = etext['id']
+                    Log.objects.create(type=Type, id_arduino=id_a, value=light, date=timezone.now())
+                    return 'Hooray!!!!!'
                 except KeyError:
                     pass
-
         except KeyError:
-            print('Required argument (type) not found')
-
-
+            return 'Required argument (type) not found'
 

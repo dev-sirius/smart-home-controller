@@ -1,16 +1,16 @@
 class TransportProtocol:
-    def send(self, packet, key, connection_info):
+    def send(self, packet, arduino):
         # encode packet for send
-        spacket = self.encode(packet, key)
+        #spacket = self.encode(packet, key)
         # choose type of connection
-        if connection_info.type == 'WIFI':
-            self.sendWIFI(spacket, connection_info)
-        elif connection_info.type == 'BLUETOOTH':
-            self.sendBLUETOOTH(spacket, connection_info)
-        elif connection_info.type == '433':
-            self.send433(spacket, connection_info)
+        if arduino.conn_type == 'wf':
+            self.sendWIFI(packet, arduino)
+        elif arduino.conn_type == 'bt':
+            self.sendBLUETOOTH(packet, arduino)
+        elif arduino.conn_type == 'rd':
+            self.send433(packet, arduino)
 
-    def AES_encode(packet, key):
+    '''def AES_encode(packet, key):
         pass
 
     # return AES_encode
@@ -24,19 +24,19 @@ class TransportProtocol:
 
     def decode(self, spacket, key):
         return self.AES_decode(spacket, key)
-
+    '''
     # send to sensors using Wi-Fi
-    def sendWIFI(spacket, connection_info):
-        ip = connection_info.name
+    def sendWIFI(package, arduino):
+        ip = arduino.ip
 
     # ...
     # send to sensors using BLUETOOTH
-    def sendBLUETOOTH(spacket, connection_info):
-        name = connection_info.name
+    def sendBLUETOOTH(package, arduino):
+        name = arduino.name_bluetooth
 
     # ...
     # send to sensors using 433
-    def send433(spacket, connection_info):
+    def send433(package, arduino):
         pass
 
 

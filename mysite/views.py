@@ -21,14 +21,7 @@ def API(request):
     if request.method == 'GET':
         pass
     elif request.method == 'POST':
-        pass
-
-
-def apiUpdate(request):
-    if request.method == 'GET':
-        pass
-    elif request.method == 'POST':
-        #jsonPost = request.POST['json']
         jsonPost = str(request.POST.get('json'))
         return HttpResponse(jsonparse.jsonExtecude(jsonPost))
     return HttpResponse('<h1>We need a request</h1>')
+
