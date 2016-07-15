@@ -51,3 +51,11 @@ def jsonExecute(text):
                     pass
         except KeyError:
             return 'Required argument (type) not found'
+
+    if Method == 'LOGIN':
+        try:
+            Type = etext['type']
+            if Type == 'NEURON':
+                isLogin = etext['is_login']
+        except KeyError:
+            pass
