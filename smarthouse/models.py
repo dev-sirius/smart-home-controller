@@ -3,7 +3,7 @@ from django.utils import timezone
 
 class Arduino(models.Model):
     name = models.CharField(max_length=50)
-    #crypto_key = models.CharField(max_length=40)
+    crypto_key = models.CharField(max_length=40)
 
     TYPE_CONNECTION = (
         ('bl', 'BLUETOOTH'),
@@ -25,3 +25,9 @@ class Log(models.Model):
     id_arduino = models.IntegerField()
     value = models.FloatField()
     date = models.DateField()
+
+class Sensors(models.Model):
+    name_arduino = models.CharField(max_length=50)
+    type = models.CharField(max_length=20)
+
+

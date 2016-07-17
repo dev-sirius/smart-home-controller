@@ -1,9 +1,9 @@
 import json
 from . import Transport
-from smarthouse.models import Arduino,Log
+from smarthouse.models import Arduino,Log,Sensors
 from django.utils import timezone
 import hashlib
-
+from . import dbwork
 
 def verificate(request):
     json = request[32:]
@@ -60,3 +60,18 @@ def jsonExecute(text):
                 isLogin = etext['is_login']
         except KeyError:
             pass
+
+    if Method == 'SET':
+        try:
+            Type = etext['type']
+
+            if Type == 'LIGHT':
+                try:
+                    light = etext['light_switch']
+                    ard = dbwork.outOfDBsensors('SET_LIGHT')
+                    Transport.send(light,ard)
+                    return 'Hooray!!!!'
+                except KeyError:
+                    pass
+        except KeyError:
+            return 'Required argument (type) not found'

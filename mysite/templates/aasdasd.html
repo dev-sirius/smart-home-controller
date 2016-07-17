@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {%load staticfiles%}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>SMARTHOME</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+  <header>
+    <h1>SMARTHOME</h1>
+  </header>
+  <div class="temp">
+    <h2>Temperature</h2>
+    <p>{{temperature}}</p>
+  </div>
+  <div id="light" >
+    <h2>Light</h2>
+    <p>{{light}}</p>
+  </div>
+</body>
+</html>
