@@ -75,3 +75,25 @@ def jsonExecute(text):
                     pass
         except KeyError:
             return 'Required argument (type) not found'
+
+    if Method == 'REGISTRATION':
+        try:
+            Type = etext['type']
+
+            if Type == 'REGISTRATION':
+                name_ard = etext['name_ard']
+                key = etext['crypto_key']
+                connection = etext['conn_type']
+                if connection == 'wf':
+                    ip_ard = etext['ip']
+                    port_ard = etext['port']
+                    Arduino.objects.create(name = name_ard,crypto_key=key,conn_type = connection,ip=ip_ard,port = port_ard)
+                elif connection == 'bt':
+                    blu_name = etext['blu_name']
+                    Arduino.objects.create(name=name_ard, crypto_key=key, conn_type=connection, name_bluetooth= blu_name)
+                elif connection == 'rd':
+                    channel_radio = etext['channel_radio']
+                    Arduino.objects.create(name=name_ard, crypto_key=key, conn_type=connection, channel = channel_radio)
+
+        except KeyError:
+            pass
