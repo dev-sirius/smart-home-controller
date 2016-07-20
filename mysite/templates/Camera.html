@@ -7,11 +7,11 @@
         <title>secure smart home</title>
 
         <!--���������� CSS Twitter Bootstrap -->
-        <link href="css/bootstrap.css" rel="stylesheet" media="screen">
+        <link href="{% static 'css/bootstrap.css'" rel="stylesheet" media="screen">
 
         <!--���������� CSS Jasny Bootstrap -->
-        <link href="css/jasny-bootstrap.css" rel="stylesheet" media="screen">
-      	<link href="css/bootstrap-switch.css" rel="stylesheet" media="screen">
+        <link href="{% static 'css/jasny-bootstrap.css'" rel="stylesheet" media="screen">
+      	<link href="{% static 'css/bootstrap-switch.css'" rel="stylesheet" media="screen">
 <style>
    body {
     background: #222 repeat-y 100% 0;
@@ -53,15 +53,15 @@
     <div class="row" style="background-color:#222">
     <div class="col-md-offset-3">
     <img src="https://127.0.0.1:808?action=stream" style="width: 640px;height: 480px;">
-    </div>
+  </div>
     </div>
 
         <!-- ���������� JavaScript Twitter Bootstrap -->
-        <script src="js/bootstrap.js"></script>
-        <script src="js/bootstrap-switch.js"></script>
+        <script src="{% static 'js/bootstrap.js'"></script>
+        <script src="{% static 'js/bootstrap-switch.js'"></script>
 
         <!-- ���������� JavaScript Jasny Bootstrap -->
-        <script src="js/jasny-bootstrap.js"></script>
+        <script src="{% static 'js/jasny-bootstrap.js'"></script>
       </body>
     </html>
   </body>
