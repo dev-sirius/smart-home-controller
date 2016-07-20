@@ -52,4 +52,4 @@ def sendtime(request):
                         str(timezone.now().time().minute) + ':' +
                         str(timezone.now().time().second))
 def camera(request):
-    return render_to_response("camera.html",{})
+    return render_to_response("Camera.html",{})
