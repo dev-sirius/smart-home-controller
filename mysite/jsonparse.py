@@ -16,7 +16,7 @@ def verificate(request):
     if rhash == chash:
         return json
     else:
-        return rhash + '//'+chash +'//'+json
+        return None
 
 def jsonExecute(text):
 
@@ -65,7 +65,7 @@ def update(text):
     etext = jsonExecute(text)
     try:
         Type = etext['type']
-        f = open('log.txt','a')
+        f = open('log.txt','w')
         f.write(text+'\n')
         f.close()
         if Type == 'TEMPERATURE':

@@ -60,8 +60,7 @@ def set(request):
 def update(request):
     if request.method == 'POST':
         jsonPost = str(request.POST.get('data'))
-        return HttpResponse(jsonparse.verificate(jsonPost))
-        '''if jsonPost == None:
+        if jsonPost == None:
             resp = HttpResponse()
             resp.status_code = 406
             resp.write('Required argument not found.')
@@ -73,7 +72,7 @@ def update(request):
             resp = HttpResponse()
             resp.status_code = 400
             resp.write('Are you trying hacking us?')
-            return resp'''
+            return resp
 
 def registration(request):
     if request.method == 'POST':
