@@ -112,5 +112,5 @@ def login_view(request):
                 return HttpResponse('login or password is invalid')
 
     elif request.method == 'GET':
-        return HttpResponse('<form action="https://192.168.1.1/login" method="POST"><input type="text" name="name" value="" /><br> <input type="text" name="pass" value = ""><br> <input type="submit" /> </form>')
+        return render_to_response('login.html',{})
 

@@ -1,5 +1,4 @@
  <!DOCTYPE html>
- {% load staticfiles %}
     <html lang="ru">
       <head>
         <meta charset="utf-16">
@@ -7,12 +6,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>secure smart home</title>
 
-        <!--���������� CSS Twitter Bootstrap -->
-        <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" media="screen">
+        <!--Ïîäêëþ÷àåì CSS Twitter Bootstrap -->
+        <link href="{% static 'css/bootstrap.css'%}" rel="stylesheet" media="screen">
 
-        <!--���������� CSS Jasny Bootstrap -->
-        <link href="{% static 'css/jasny-bootstrap.css' %}" rel="stylesheet" media="screen">
-      	<link href="{% static 'css/bootstrap-switch.css' %}" rel="stylesheet" media="screen">
+        <!--Ïîäêëþ÷àåì CSS Jasny Bootstrap -->
+        <link href="{% static 'css/jasny-bootstrap.css'%}" rel="stylesheet" media="screen">
 <style>
    body {
     background: #222 repeat-y 100% 0;
@@ -52,17 +50,17 @@
       <a class="navbar-brand" href="#">Secure Smart Home</a>
     </div>
     <div class="row" style="background-color:#222">
-    <div class="col-md-offset-3">
-    <img src="https://192.168.1.1:808?action=stream" style="width: 640px;height: 480px;">
-  </div>
+    <div class="col-md-offset-4 сol-sm-offset-3 col-xs-offset-2" style="margin-top: 3%">
+    <img src="https://192.168.1.1:808?action=stream" style="width: 72%;height: 40%;">
+    </div>
     </div>
 
-        <!-- ���������� JavaScript Twitter Bootstrap -->
-        <script src="{% static 'js/bootstrap.js' %}"></script>
-        <script src="{% static 'js/bootstrap-switch.js' %}"></script>
+        <!-- Ïîäêëþ÷àåì JavaScript Twitter Bootstrap -->
+        <script src="{% static 'js/bootstrap.js'%}"></script>
+        <script src="{% static 'js/bootstrap-switch.js'%}"></script>
 
-        <!-- ���������� JavaScript Jasny Bootstrap -->
-        <script src="{% static 'js/jasny-bootstrap.js' %}"></script>
+        <!-- Ïîäêëþ÷àåì JavaScript Jasny Bootstrap -->
+        <script src="{% static 'js/jasny-bootstrap.js'%}"></script>
       </body>
     </html>
   </body>
