@@ -34,7 +34,7 @@ def set(text):
 
         if Type == 'LIGHT':
             try:
-                light = etext['light_switch']
+                light = etext['value']
                 ard = dbwork.outOfDBsensors('SET_LIGHT')
                 Transport.send(light, ard)
                 return 'Hooray!!!!'
@@ -68,7 +68,7 @@ def update(text):
 
         if Type == 'TEMPERATURE':
             try:
-                temperature = etext['temperature']
+                temperature = etext['value']
                 id_a = etext['id']
                 Log.objects.create(type=Type, id_arduino=id_a, value=temperature, date=timezone.now())
                 return 'Hooray!!!!!'
@@ -77,7 +77,7 @@ def update(text):
 
         elif Type == 'LIGHT':
             try:
-                light = etext['light_switch']
+                light = etext['value']
                 id_a = etext['id']
                 Log.objects.create(type=Type, id_arduino=id_a, value=light, date=timezone.now())
                 return 'Hooray!!!!?'
