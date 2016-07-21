@@ -4,19 +4,14 @@ from django.shortcuts import render_to_response
 import os
 from . import dbwork
 from django.utils import timezone
-
-def temp(request):
-    try:
-        temp = request.GET['temperature']
-        return render_to_response('temp.html', {'temperature': temp})
-    except KeyError:
-        resp = HttpResponse()
-        resp.status_code = 406
-        resp.write('Required argument not found.')
-        return resp
+from django.contrib.auth import authenticate, login
+from django.http import HttpResponseRedirect
 
 def index(request):
-    return render_to_response('index.html', {'temperature':int(dbwork.outOfDB('TEMPERATURE')), 'light':int(dbwork.outOfDB('LIGHT')) })
+    if request.user.is_authenticated():
+        return render_to_response('index.html', {'temperature':int(dbwork.outOfDB('TEMPERATURE')), 'light':int(dbwork.outOfDB('LIGHT')) })
+    else:
+        return HttpResponseRedirect('https://192.168.1.1/login')
 
 def API(request):
     if request.method == 'GET':
@@ -78,22 +73,7 @@ def update(request):
             resp.status_code = 400
             resp.write('Are you trying hacking us?')
             return resp
-def login(request):
-    if request.method == 'POST':
-        jsonPost = str(request.POST.get('data'))
-        if jsonPost == None:
-            resp = HttpResponse()
-            resp.status_code = 406
-            resp.write('Required argument not found.')
-            return resp
-        jsons = jsonparse.verificate()
-        if jsons != None:
-            return HttpResponse(jsonparse.login(jsons))
-        else:
-            resp = HttpResponse()
-            resp.status_code = 400
-            resp.write('Are you trying hacking us?')
-            return resp
+
 def registration(request):
     if request.method == 'POST':
         jsonPost = str(request.POST.get('data'))
@@ -116,3 +96,21 @@ def sendtime(request):
                         str(timezone.now().time().second))
 def camera(request):
     return render_to_response("Camera.html",{})
+
+def login_view(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        passwd = request.POST.get('pass')
+        user = authenticate(username = name, password = passwd)
+        if user is not None:
+            if user.is_active:
+                login(request, user)
+                return HttpResponseRedirect('https://192.168.1.1/')
+            else:
+                return HttpResponse('user is not active')
+        else:
+                return HttpResponse('login or password is invalid')
+
+    elif request.method == 'GET':
+        return HttpResponse('<form action="https://192.168.1.1/login" method="POST"><input type="text" name="name" value="" /><br> <input type="text" name="pass" value = ""><br> <input type="submit" /> </form>')
+
