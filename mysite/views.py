@@ -46,7 +46,70 @@ def API(request):
     resp.status_code = 204
     resp.write('We need a request')
     return resp
-
+def set(request):
+    if request.method == 'POST':
+        jsonPost = str(request.POST.get('data'))
+        if jsonPost == None:
+            resp = HttpResponse()
+            resp.status_code = 406
+            resp.write('Required argument not found.')
+            return resp
+        jsons = jsonparse.verificate()
+        if jsons != None:
+            return HttpResponse(jsonparse.set(jsons))
+        else:
+            resp = HttpResponse()
+            resp.status_code = 400
+            resp.write('Are you trying hacking us?')
+            return resp
+def update(request):
+    if request.method == 'POST':
+        jsonPost = str(request.POST.get('data'))
+        if jsonPost == None:
+            resp = HttpResponse()
+            resp.status_code = 406
+            resp.write('Required argument not found.')
+            return resp
+        jsons = jsonparse.verificate()
+        if jsons != None:
+            return HttpResponse(jsonparse.update(jsons))
+        else:
+            resp = HttpResponse()
+            resp.status_code = 400
+            resp.write('Are you trying hacking us?')
+            return resp
+def login(request):
+    if request.method == 'POST':
+        jsonPost = str(request.POST.get('data'))
+        if jsonPost == None:
+            resp = HttpResponse()
+            resp.status_code = 406
+            resp.write('Required argument not found.')
+            return resp
+        jsons = jsonparse.verificate()
+        if jsons != None:
+            return HttpResponse(jsonparse.login(jsons))
+        else:
+            resp = HttpResponse()
+            resp.status_code = 400
+            resp.write('Are you trying hacking us?')
+            return resp
+def registration(request):
+    if request.method == 'POST':
+        jsonPost = str(request.POST.get('data'))
+        if jsonPost == None:
+            resp = HttpResponse()
+            resp.status_code = 406
+            resp.write('Required argument not found.')
+            return resp
+        jsons = jsonparse.verificate()
+        if jsons != None:
+            return HttpResponse(jsonparse.registration(jsons))
+        else:
+            resp = HttpResponse()
+            resp.status_code = 400
+            resp.write('Are you trying hacking us?')
+            return resp
 def sendtime(request):
     return HttpResponse(str(timezone.now().time().hour+3) + ':' +
                         str(timezone.now().time().minute) + ':' +
