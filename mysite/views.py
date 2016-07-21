@@ -49,7 +49,7 @@ def set(request):
             resp.status_code = 406
             resp.write('Required argument not found.')
             return resp
-        jsons = jsonparse.verificate()
+        jsons = jsonparse.verificate(jsonPost)
         if jsons != None:
             return HttpResponse(jsonparse.set(jsons))
         else:
@@ -65,7 +65,7 @@ def update(request):
             resp.status_code = 406
             resp.write('Required argument not found.')
             return resp
-        jsons = jsonparse.verificate()
+        jsons = jsonparse.verificate(jsonPost)
         if jsons != None:
             return HttpResponse(jsonparse.update(jsons))
         else:
@@ -82,7 +82,7 @@ def registration(request):
             resp.status_code = 406
             resp.write('Required argument not found.')
             return resp
-        jsons = jsonparse.verificate()
+        jsons = jsonparse.verificate(jsonPost)
         if jsons != None:
             return HttpResponse(jsonparse.registration(jsons))
         else:
