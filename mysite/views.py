@@ -60,6 +60,9 @@ def set(request):
 def update(request):
     if request.method == 'POST':
         jsonPost = str(request.POST.get('data'))
+        f = open('/home/pi/Documents/smart-home-controller/log.txt', 'a')
+        f.write(jsonPost + '\n')
+        f.close()
         if jsonPost == None:
             resp = HttpResponse()
             resp.status_code = 406
