@@ -16,7 +16,7 @@ def verificate(request):
     if rhash == chash:
         return json
     else:
-        return None
+        return rhash + '//'+chash
 
 def jsonExecute(text):
 

@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7dd042ac-e22a-42e9-ae95-615135f44b43" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mysite/jsonparse.py" afterPath="$PROJECT_DIR$/mysite/jsonparse.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mysite/views.py" afterPath="$PROJECT_DIR$/mysite/views.py" />
     </list>
     <ignored path="smart-home-controller.iws" />
@@ -23,11 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mysite/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="75" column="26" selection-start-line="75" selection-start-column="26" selection-end-line="75" selection-end-column="26" />
+            <state relative-caret-position="195">
+              <caret line="62" column="58" selection-start-line="62" selection-start-column="58" selection-end-line="62" selection-end-column="58" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
               </folding>
@@ -89,11 +90,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jsonparse.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="jsonparse.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mysite/jsonparse.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+            <state relative-caret-position="270">
+              <caret line="18" column="27" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -145,8 +146,8 @@
         <option value="$PROJECT_DIR$/mysite/templates/temp.html" />
         <option value="$PROJECT_DIR$/mysite/templates/index.html" />
         <option value="$PROJECT_DIR$/mysite/urls.py" />
-        <option value="$PROJECT_DIR$/mysite/jsonparse.py" />
         <option value="$PROJECT_DIR$/mysite/views.py" />
+        <option value="$PROJECT_DIR$/mysite/jsonparse.py" />
       </list>
     </option>
   </component>
@@ -831,22 +832,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mysite/jsonparse.py">
+    <entry file="file://$PROJECT_DIR$/mysite/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+        <state relative-caret-position="195">
+          <caret line="62" column="58" selection-start-line="62" selection-start-column="58" selection-end-line="62" selection-end-column="58" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#0#36#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mysite/views.py">
+    <entry file="file://$PROJECT_DIR$/mysite/jsonparse.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="75" column="26" selection-start-line="75" selection-start-column="26" selection-end-line="75" selection-end-column="26" />
+        <state relative-caret-position="270">
+          <caret line="18" column="27" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
           <folding>
-            <element signature="e#0#36#0" expanded="true" />
+            <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>

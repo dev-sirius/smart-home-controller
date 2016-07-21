@@ -60,7 +60,7 @@ def set(request):
 def update(request):
     if request.method == 'POST':
         jsonPost = str(request.POST.get('data'))
-        return HttpResponse(jsonPost)
+        return HttpResponse(jsonparse.verificate(jsonPost))
         '''if jsonPost == None:
             resp = HttpResponse()
             resp.status_code = 406
