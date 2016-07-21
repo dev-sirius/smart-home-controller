@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7dd042ac-e22a-42e9-ae95-615135f44b43" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mysite/jsonparse.py" afterPath="$PROJECT_DIR$/mysite/jsonparse.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mysite/views.py" afterPath="$PROJECT_DIR$/mysite/views.py" />
-    </list>
+    <list default="true" id="7dd042ac-e22a-42e9-ae95-615135f44b43" name="Default" comment="" />
     <ignored path="smart-home-controller.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
