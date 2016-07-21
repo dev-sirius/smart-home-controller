@@ -65,7 +65,7 @@ def update(text):
     etext = jsonExecute(text)
     try:
         Type = etext['type']
-        f = open('log.txt','w')
+        f = open('/home/pi/Documents/smart-home-controller/log.txt','w')
         f.write(text+'\n')
         f.close()
         if Type == 'TEMPERATURE':
