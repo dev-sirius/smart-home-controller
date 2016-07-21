@@ -65,12 +65,15 @@ def update(text):
     etext = jsonExecute(text)
     try:
         Type = etext['type']
-
+        f = open('log.txt','a')
+        f.write(text+'\n')
+        f.close()
         if Type == 'TEMPERATURE':
             try:
                 temperature = etext['value']
                 id_a = etext['id']
                 Log.objects.create(type=Type, id_arduino=id_a, value=temperature, date=timezone.now())
+
                 return 'Hooray!!!!!'
             except KeyError:
                 pass
