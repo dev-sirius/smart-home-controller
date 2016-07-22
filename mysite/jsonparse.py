@@ -9,8 +9,8 @@ import RPi.GPIO as GPIO
 
 isInitGPIO = True
 transporter = Transport.TransportProtocol()
+pin =None
 
-pin = 0
 def verificate(request):
     json = request[32:]
     rhash = request[:32]
@@ -106,8 +106,8 @@ def changeLight(value):
     pin.ChangeDutyCycle(value*10)
 
 def initGPIO():
+    global pin
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(21, GPIO.OUT)
     pin = GPIO.PWM(21, 200)
     pin.start(0)
-    return True
