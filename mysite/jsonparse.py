@@ -4,9 +4,13 @@ from smarthouse.models import Arduino,Log,Sensors
 from django.utils import timezone
 import hashlib
 from . import dbwork
+import time
+import RPi.GPIO as GPIO
+
 
 transporter = Transport.TransportProtocol()
-
+isInitGPIO = False
+pin = 0
 def verificate(request):
     json = request[32:]
     rhash = request[:32]
@@ -34,9 +38,12 @@ def set(text):
 
         if Type == 'LIGHT':
             try:
-                light = etext['value']
+                light = int(etext['value'])
                 ard = dbwork.outOfDBsensors('SET_LIGHT')
-                Transport.send(light, ard)
+                if (isInitGPIO):
+                    changeLight(light)
+                else:
+                    initGPIO()
                 return 'Hooray!!!!'
             except KeyError:
                 pass
@@ -94,3 +101,16 @@ def login(text):
             isLogin = etext['is_login']
     except KeyError:
         pass
+def changeLight(value):
+    try:
+        pin.ChangeDutyCycle(value*10)
+        while 1:
+            time.sleep(0.1)
+    except KeyboardInterrupt:
+        pass
+
+def initGPIO():
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setup(21, GPIO.OUT)
+    pin = GPIO.PWM(21, 200)
+    pin.start(0)
