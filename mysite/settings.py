@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'smarthouse',
+    'mysite'
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -52,7 +53,7 @@ MIDDLEWARE_CLASSES = [
 
 ROOT_URLCONF = 'mysite.urls'
 
-STATIC_ROOT = '/home/pi/Documents/smart-home-controller/mysite/files/static/'
+STATIC_ROOT = 'files/static'
 STATIC_URL = '/static/'
 
 
@@ -64,9 +65,6 @@ STATICFILES_FINDERS = [
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            '/home/pi/Documents/smart-home-controller/mysite/templates'
-        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

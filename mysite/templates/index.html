@@ -1,266 +1,228 @@
- <!DOCTYPE html>
- {% load staticfiles %}
-    <html lang="ru">
-      <head>
-        <meta charset="utf-16">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>secure smart home</title>
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Home Controller</title>
+    <meta charset="utf-16">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>secure smart home</title>
 
-        <!--Ïîäêëþ÷àåì CSS Twitter Bootstrap -->
-        <link href="{% static 'css/bootstrap.css'%}" rel="stylesheet" media="screen">
-        <!--Ïîäêëþ÷àåì CSS Jasny Bootstrap -->
-        <link href="{% static 'css/jasny-bootstrap.css'%}" rel="stylesheet" media="screen">
-      	<link href="{% static 'css/bootstrap-switch.css'%}" rel="stylesheet" media="screen">
-<style>
-.actions, .chart {
-	    margin: 15px auto;
-	    width: 820px;
-	}
-	button {
-	    background: none repeat scroll 0 0 #E3E3E3;
-	    border: 1px solid #BBBBBB;
-	    border-radius: 3px 3px 3px 3px;
-	    box-shadow: 0 0 1px 1px #F6F6F6 inset;
-	    color: #333333;
-	    font: bold 12px;
-	    margin: 0 5px;
-	    padding: 8px 0 9px;
-	    text-align: center;
-	    text-shadow: 0 1px 0 #FFFFFF;
-	    width: 150px;
-	}
-	button:hover {
-	    background: none repeat scroll 0 0 #D9D9D9;
-	    box-shadow: 0 0 1px 1px #EAEAEA inset;
-	    color: #222222;
-	    cursor: pointer;
-	}
-	button:active {
-	    background: none repeat scroll 0 0 #D0D0D0;
-	    box-shadow: 0 0 1px 1px #E3E3E3 inset;
+    <!--Ïîäêëþ÷àåì CSS Twitter Bootstrap -->
+    <link href="{% static 'css/bootstrap.css'%}" rel="stylesheet" media="screen">
+    <!--Ïîäêëþ÷àåì CSS Jasny Bootstrap -->
+    <link href="{% static 'css/jasny-bootstrap.css'%}" rel="stylesheet" media="screen">
+    <link href="{% static 'css/bootstrap-switch.css'%}" rel="stylesheet" media="screen">
 
-	    color: #000000;
+    <script src="{% static 'js/jquery.js'%}"></script>
+    <script src="{% static 'js/jquery.knob.js'%}"></script>
 
-	}
+    <script>
 
-   body {
-    background: #222 repeat-y 100% 0;
-   }
-  </style>
+        $(function() {
+            $(".knob").knob();
 
-<script src="{% static 'js/jquery.js'%}"></script>
-<script src="{% static 'js/jquery.knob.js'%}"></script>
-        <script>
-
-            $(function() {
-                $(".knob").knob();
-
-                // Example of infinite knob, iPod click wheel
-                var val,up=0,down=0,i=0
+            // Example of infinite knob, iPod click wheel
+            var val,up=0,down=0,i=0
                     ,$idir = $("div.idir")
                     ,$ival = $("div.ival")
                     ,incr = function() { i++; $idir.show().html("+").fadeOut(); $ival.html(i); }
                     ,decr = function() { i--; $idir.show().html("-").fadeOut(); $ival.html(i); };
-                $("input.infinite").knob(
-                                    {
-                                    'min':0
-                                    ,'max':20
-                                    ,'stopper':false
-                                    ,'change':function(v){
-                                                if(val>v){
-                                                    if(up){
-                                                        decr();
-                                                        up=0;
-                                                    }else{up=1;down=0;}
-                                                }else{
-                                                    if(down){
-                                                        incr();
-                                                        down=0;
-                                                    }else{down=1;up=0;}
-                                                }
-                                                val=v;
-                                            }
-                                    }
-                                    );
+            $("input.infinite").knob(
+                    {
+                        'min':0
+                        ,'max':20
+                        ,'stopper':false
+                        ,'change':function(v){
+                        if(val>v){
+                            if(up){
+                                decr();
+                                up=0;
+                            }else{up=1;down=0;}
+                        }else{
+                            if(down){
+                                incr();
+                                down=0;
+                            }else{down=1;up=0;}
+                        }
+                        val=v;
+                    }
+                    }
+            );
 
 
 
-            });
-        </script>
-<style>
-            h2{color:#87CEEB;font-family:'Georgia';}
-        </style>
+        });
+    </script>
 
-
-
+    <style>
+        h2{color:#87CEEB;font-family:'Georgia';}
+    </style>
 </head>
-	<body>
+<body>
 
-      </head>
-      <body>
-
-
-        <div class="navmenu navmenu-default navmenu-fixed-left offcanvas-sm" style="width: 200px;background-color:#222;">
-      <a class="navmenu-brand visible-md visible-lg" href="#">Secure Smart Home</a>
-      <ul class="nav navmenu-nav">
+<div class="navmenu navmenu-default navmenu-fixed-left offcanvas-sm" style="width: 200px;background-color:#222;">
+    <a class="navmenu-brand visible-md visible-lg" href="#">Secure Smart Home</a>
+    <ul class="nav navmenu-nav">
         <a class="navmenu-brand" href="#">Smarthouse</a>
-  <ul class="nav navmenu-nav">
-    <li class="active"><a href="#">Tools<span class="glyphicon glyphicon-wrench" aria-hidden="true" style="margin-left: 34%"></span></a></li>
-    <li><a href="/camera">Camera     <span class="glyphicon glyphicon-camera" aria-hidden="true" style="margin-left: 20%"></span></a></li>
-    </li>
-  </ul>
-      </ul>
+        <ul class="nav navmenu-nav">
+            <li class="active"><a href="#">Tools<span class="glyphicon glyphicon-wrench" aria-hidden="true" style="margin-left: 34%"></span></a></li>
+            <li><a href="/camera">Camera     <span class="glyphicon glyphicon-camera" aria-hidden="true" style="margin-left: 20%"></span></a></li>
+            </li>
+        </ul>
+    </ul>
+</div>
+<div class="navbar navbar-default navbar-fixed-top hidden-md hidden-lg">
+    <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".navmenu">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#">Secure Smart Home</a>
+</div>
+<div class="row" style="background-color:#222">
+    <div class="clearfix">
+        <form>
+            <div class="col-md-offset-6 col-sm-offset-5 col-xs-offset-3" align="center" style="float:left;width:200px;height:200px;background-color:#222;color:#FFF;top:200px;padding:20px;">
+
+                <input class="knob" data-width="150" data-displayPrevious=true data-fgColor="#00ff03" data-skin="tron" data-thickness=".3" data-max="50" value="{{temperature}}">
+            </div>
+
+        </form>
+        <form>
+
+            <div class="btn-group col-md-offset-5 col-sm-offset-4 col-xs-offset-3" align="center">
+                <button class="btn btn-default btn-lg" style="min-width: 100px">Update</button>
+            </div>
+
+            <div class="btn-group col-md-offset-2 col-sm-offset-2 col-xs-offset-0" align="center">
+                <button class="btn btn-default btn-lg" style="min-width: 100px">Set   </button>
+            </div>
+
+        </form>
+        <form>
+            <div class="col-md-offset-6 col-sm-offset-5 col-xs-offset-3" style="float:left;width:200px;height:200px;background-color:#222;color:#FFF;padding:20px" align="center">
+
+                <input class="knob" data-width="150" data-displayPrevious=true data-fgColor="#00ffaa" data-skin="tron" data-cursor="true" data-max="10" value="{{light}}">
+            </div>
+        </form>
+        <form>
+
+            <div class="btn-group col-md-offset-5 col-sm-offset-4 col-xs-offset-3" align="center">
+                <button class="btn btn-default btn-lg" style="min-width: 100px">Update</button>
+            </div>
+            <div class="btn-group col-md-offset-2 col-sm-offset-2 col-xs-offset-0" align="center">
+                <button class="btn btn-default btn-lg" style="min-width: 100px">Set   </button>
+            </div>
+        </form>
+        <div class="col-md-offset-5 col-sm-offset-4 col-xs-offset-1">
+            <div class="btn-group btn-toggle" style="margin-left:5%;padding: 40px;">">
+                <button class="btn btn-lg btn-success"> LIGHT ON </button>
+                <button class="btn btn-lg btn-defalut"> LIGHT OFF </button>
+            </div>
+        </div>
+        <div class="col-md-offset-3">
+            <div id="chart_1" class="chart"></div>
+        </div>
     </div>
-    <div class="navbar navbar-default navbar-fixed-top hidden-md hidden-lg">
-      <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".navmenu">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Secure Smart Home</a>
-    </div>
-    <div class="row" style="background-color:#222">
-<div class="clearfix">
-<form>
-        <div class="col-md-offset-6 col-sm-offset-5 col-xs-offset-3" align="center" style="float:left;width:200px;height:200px;background-color:#222;color:#FFF;top:200px;padding:20px;">
 
-            <input class="knob" data-width="150" data-displayPrevious=true data-fgColor="#00ff03" data-skin="tron" data-thickness=".3" data-max="50" value="{{temperature}}">
-        </div>
-
-</form>
-<form>
-
-	<div class="btn-group col-md-offset-5 col-sm-offset-4 col-xs-offset-3" align="center">
-	<button class="btn btn-default btn-lg" style="min-width: 100px">Update</button>
-        </div>
-
-	<div class="btn-group col-md-offset-2 col-sm-offset-2 col-xs-offset-0" align="center">
-	<button class="btn btn-default btn-lg" style="min-width: 100px">Set   </button>
-        </div>
-
-</form>
-<form>
-	<div class="col-md-offset-6 col-sm-offset-5 col-xs-offset-3" style="float:left;width:200px;height:200px;background-color:#222;color:#FFF;padding:20px" align="center">
-
-            <input class="knob" data-width="150" data-displayPrevious=true data-fgColor="#00ffaa" data-skin="tron" data-cursor="true" data-max="10" value="{{light}}">
-        </div>
-</form>
-<form>
-
-	<div class="btn-group col-md-offset-5 col-sm-offset-4 col-xs-offset-3" align="center">
-	<button class="btn btn-default btn-lg" style="min-width: 100px">Update</button>
-        </div>
-	<div class="btn-group col-md-offset-2 col-sm-offset-2 col-xs-offset-0" align="center">
-	<button class="btn btn-default btn-lg" style="min-width: 100px">Set   </button>
-        </div>
-</form>
-<div class="col-md-offset-5 col-sm-offset-4 col-xs-offset-1">
-<div class="btn-group btn-toggle" style="margin-left:5%;padding: 40px;">">
- <button class="btn btn-lg btn-success"> LIGHT ON </button>
- <button class="btn btn-lg btn-defalut"> LIGHT OFF </button>
 </div>
-</div>
-<div class="col-md-offset-3">
-	<div id="chart_1" class="chart"></div>
-</div>
-</div>
-<script>
-// Функция смены типа диаграммы
-function ChangeChartType(chart, series, newType) {
-    newType = newType.toLowerCase();
-    for (var i = 0; i < series.length; i++) {
-        var srs = series[0];
-        try {
-            srs.chart.addSeries({
-                type: newType,
-                stack: srs.stack,
-                yaxis: srs.yaxis,
-                name: srs.name,
-                color: srs.color,
-                data: srs.options.data
-            },
-            false);
-            series[0].remove();
-        } catch (e) {
+
+    <script>
+        // Функция смены типа диаграммы
+        function ChangeChartType(chart, series, newType) {
+            newType = newType.toLowerCase();
+            for (var i = 0; i < series.length; i++) {
+                var srs = series[0];
+                try {
+                    srs.chart.addSeries({
+                                type: newType,
+                                stack: srs.stack,
+                                yaxis: srs.yaxis,
+                                name: srs.name,
+                                color: srs.color,
+                                data: srs.options.data
+                            },
+                            false);
+                    series[0].remove();
+                } catch (e) {
+                }
+            }
         }
-    }
-}
 
-// Определение двух диаграмм
-var chart1;
+        // Определение двух диаграмм
+        var chart1;
 
-// Запуск после зваершения загрузки DOM (документа)
-$(document).ready(function() {
+        // Запуск после зваершения загрузки DOM (документа)
+        $(document).ready(function() {
 
-    // Инициализация диаграммы
-    chart1 = new Highcharts.Chart({
-     chart: {
-        renderTo: 'chart_1',
-        type: 'spline',
-        height: 350,
-        width: 700,
+            // Инициализация диаграммы
+            chart1 = new Highcharts.Chart({
+                chart: {
+                    renderTo: 'chart_1',
+                    type: 'spline',
+                    height: 350,
+                    width: 700,
 
-     },
-     title: {
-        text: 'Показания датчиков'
-     },
-     xAxis: {
-        categories: ['12:00', '12:05' , '12:10' , '12:15' , '12:20' , '12:25' , '12:30', , '12:35' , '12:40' , '12:45' , '12:50' , '12:55' , '13:00']
-     },
-     series: [{
-        name: 'Датчик шума',
-        data: [5, 10, 20, 22, 25, 28, 30, 15, 18, 40, 30, 25, 60]
-     }, {
-        name: 'Датчик угарного газа',
-        data: [15, 15, 18, 40, 30, 25, 60, 10, 20, 22, 25, 28, 30]
-     }, {
-        name: 'Датчик котейки',
-        data: [1, 3, 6, 0, 50, 25, 50,40, 30, 25, 60, 10, 7]
-     }]
-    });
+                },
+                title: {
+                    text: 'Показания датчиков'
+                },
+                xAxis: {
+                    categories: ['12:00', '12:05' , '12:10' , '12:15' , '12:20' , '12:25' , '12:30', , '12:35' , '12:40' , '12:45' , '12:50' , '12:55' , '13:00']
+                },
+                series: [{
+                    name: 'Датчик шума',
+                    data: [5, 10, 20, 22, 25, 28, 30, 15, 18, 40, 30, 25, 60]
+                }, {
+                    name: 'Датчик угарного газа',
+                    data: [15, 15, 18, 40, 30, 25, 60, 10, 20, 22, 25, 28, 30]
+                }, {
+                    name: 'Датчик котейки',
+                    data: [1, 3, 6, 0, 50, 25, 50,40, 30, 25, 60, 10, 7]
+                }]
+            });
 
 
-});
+        });
 
-</script>
-   <script>
-$('.btn-toggle').click(function() {
-    $(this).find('.btn').toggleClass('active');
+    </script>
+    <script>
+        $('.btn-toggle').click(function() {
+            $(this).find('.btn').toggleClass('active');
 
-    if ($(this).find('.btn-primary').size()>0) {
-    	$(this).find('.btn').toggleClass('btn-primary');
-    }
-    if ($(this).find('.btn-danger').size()>0) {
-    	$(this).find('.btn').toggleClass('btn-danger');
-    }
-    if ($(this).find('.btn-success').size()>0) {
-    	$(this).find('.btn').toggleClass('btn-success');
-    }
-    if ($(this).find('.btn-info').size()>0) {
-    	$(this).find('.btn').toggleClass('btn-info');
-    }
+            if ($(this).find('.btn-primary').size()>0) {
+                $(this).find('.btn').toggleClass('btn-primary');
+            }
+            if ($(this).find('.btn-danger').size()>0) {
+                $(this).find('.btn').toggleClass('btn-danger');
+            }
+            if ($(this).find('.btn-success').size()>0) {
+                $(this).find('.btn').toggleClass('btn-success');
+            }
+            if ($(this).find('.btn-info').size()>0) {
+                $(this).find('.btn').toggleClass('btn-info');
+            }
 
-    $(this).find('.btn').toggleClass('btn-default');
+            $(this).find('.btn').toggleClass('btn-default');
 
-});
+        });
 
-$('form').submit(function(){
-	alert($(this["options"]).val());
-    return false;
-});
- </script>
+        $('form').submit(function(){
+            alert($(this["options"]).val());
+            return false;
+        });
+    </script>
 
 
-        <!-- Ïîäêëþ÷àåì JavaScript Twitter Bootstrap -->
-        <script src="{% static 'js/bootstrap.js'%}"></script>
-        <script src="{% static 'js/bootstrap-switch.js'%}"></script>
-        <script src="{% static 'js/highcharts.js'%}"></script>
-        <script src="{% static 'js/dark-unica.js'%}"></script>
-        <script src="{% static 'js/main.js'%}"></script>
-        <!-- Ïîäêëþ÷àåì JavaScript Jasny Bootstrap -->
-        <script src="{% static 'js/jasny-bootstrap.js'%}"></script>
-      </body>
-    </html>
-  </body>
+    <script src="{% static 'js/bootstrap.js'%}"></script>
+    <script src="{% static 'js/bootstrap-switch.js'%}"></script>
+    <script src="{% static 'js/highcharts.js'%}"></script>
+    <script src="{% static 'js/dark-unica.js'%}"></script>
+    <script src="{% static 'js/main.js'%}"></script>
+
+    <script src="{% static 'js/jasny-bootstrap.js'%}"></script>
+
+</body>
 </html>
