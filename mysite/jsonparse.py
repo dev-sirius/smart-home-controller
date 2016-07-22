@@ -5,11 +5,29 @@ from django.utils import timezone
 import hashlib
 from . import dbwork
 import time
-import RPi.GPIO as GPIO
+import Rpi.GPIO as GPIO
 
-isInitGPIO = True
+# isInitGPIO = False
 transporter = Transport.TransportProtocol()
-global pin
+
+
+class LightControl:
+    pin = None
+
+    @staticmethod
+    def setLight(lightness):
+        if LightControl.pin is None:
+            LightControl.pin = LightControl.initGPIO()
+        changeLight(LightControl.pin, lightness)
+        return 'Hooray!!!!'
+
+    @staticmethod
+    def initGPIO():
+        GPIO.setmode(GPIO.BCM)
+        GPIO.setup(21, GPIO.OUT)
+        pin = GPIO.PWM(21, 200)
+        pin.start(0)
+        return pin
 
 
 def verificate(request):
@@ -36,20 +54,12 @@ def set(text):
     etext = jsonExecute(text)
     try:
         Type = etext['type']
-        global isInitGPIO
-        global pin
         if Type == 'LIGHT':
             try:
-                light = int(etext['value'])
-                if (isInitGPIO == True):
-                    changeLight(pin, light)
-                else:
-                    pin = initGPIO()
-                    isInitGPIO = True
-                    changeLight(pin, light)
-                return 'Hooray!!!!'
+                LightControl.setLight(etext['value'])
             except KeyError:
                 pass
+
     except KeyError:
         return 'Required argument (type) not found'
 
@@ -107,9 +117,3 @@ def login(text):
 def changeLight(pin, value):
     pin.ChangeDutyCycle(value*10)
 
-def initGPIO():
-    GPIO.setmode(GPIO.BCM)
-    GPIO.setup(21, GPIO.OUT)
-    pin = GPIO.PWM(21, 200)
-    pin.start(0)
-    return pin
