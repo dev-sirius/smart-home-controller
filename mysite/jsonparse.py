@@ -9,7 +9,7 @@ import RPi.GPIO as GPIO
 
 isInitGPIO = True
 transporter = Transport.TransportProtocol()
-pin =None
+
 
 def verificate(request):
     json = request[32:]
@@ -36,15 +36,16 @@ def set(text):
     try:
         Type = etext['type']
         global isInitGPIO
+        global pin
         if Type == 'LIGHT':
             try:
                 light = int(etext['value'])
                 if (isInitGPIO == True):
-                    changeLight(light)
+                    changeLight(pin, light)
                 else:
-                    initGPIO()
+                    pin = initGPIO()
                     isInitGPIO = True
-                    changeLight(light)
+                    changeLight(pin, light)
                 return 'Hooray!!!!'
             except KeyError:
                 pass
@@ -102,12 +103,12 @@ def login(text):
             isLogin = etext['is_login']
     except KeyError:
         pass
-def changeLight(value):
+def changeLight(pin, value):
     pin.ChangeDutyCycle(value*10)
 
 def initGPIO():
-    global pin
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(21, GPIO.OUT)
     pin = GPIO.PWM(21, 200)
     pin.start(0)
+    return pin
