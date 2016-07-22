@@ -36,7 +36,7 @@ def verificate(request):
     MD5 = hashlib.md5()
     MD5.update(json)
     chash = MD5.hexdigest()
-    if rhash == chash:
+    if str(rhash) == str(chash):
         return json
     else:
         return str(chash) +'//'+str(rhash)
