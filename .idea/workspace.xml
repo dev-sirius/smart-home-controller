@@ -61,15 +61,15 @@
         <entry file="file://$PROJECT_DIR$/mysite/jsonparse.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="567">
-              <caret line="116" column="20" selection-start-line="116" selection-start-column="20" selection-end-line="116" selection-end-column="20" />
+              <caret line="105" column="14" selection-start-line="105" selection-start-column="14" selection-end-line="105" selection-end-column="14" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
-                <element signature="e#294#493#0" expanded="false" />
-                <element signature="e#523#636#0" expanded="false" />
-                <element signature="e#1181#1957#0" expanded="false" />
-                <element signature="e#1980#2745#0" expanded="false" />
-                <element signature="e#2023#2672#0" expanded="false" />
-                <element signature="e#2767#2933#0" expanded="false" />
+                <element signature="e#293#492#0" expanded="false" />
+                <element signature="e#522#635#0" expanded="false" />
+                <element signature="e#1233#2009#0" expanded="false" />
+                <element signature="e#2032#2797#0" expanded="false" />
+                <element signature="e#2075#2724#0" expanded="false" />
+                <element signature="e#2819#2985#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -444,7 +444,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -465,12 +465,12 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#294#493#0" expanded="false" />
-            <element signature="e#523#636#0" expanded="false" />
-            <element signature="e#1181#1957#0" expanded="false" />
-            <element signature="e#1980#2745#0" expanded="false" />
-            <element signature="e#2023#2672#0" expanded="false" />
-            <element signature="e#2767#2933#0" expanded="false" />
+            <element signature="e#293#492#0" expanded="false" />
+            <element signature="e#522#635#0" expanded="false" />
+            <element signature="e#1233#2009#0" expanded="false" />
+            <element signature="e#2032#2797#0" expanded="false" />
+            <element signature="e#2075#2724#0" expanded="false" />
+            <element signature="e#2819#2985#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -525,12 +525,12 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#294#493#0" expanded="false" />
-            <element signature="e#523#636#0" expanded="false" />
-            <element signature="e#1181#1957#0" expanded="false" />
-            <element signature="e#1980#2745#0" expanded="false" />
-            <element signature="e#2023#2672#0" expanded="false" />
-            <element signature="e#2767#2933#0" expanded="false" />
+            <element signature="e#293#492#0" expanded="false" />
+            <element signature="e#522#635#0" expanded="false" />
+            <element signature="e#1233#2009#0" expanded="false" />
+            <element signature="e#2032#2797#0" expanded="false" />
+            <element signature="e#2075#2724#0" expanded="false" />
+            <element signature="e#2819#2985#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -585,12 +585,12 @@
           <caret line="24" column="40" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#294#493#0" expanded="false" />
-            <element signature="e#523#636#0" expanded="false" />
-            <element signature="e#1181#1957#0" expanded="false" />
-            <element signature="e#1980#2745#0" expanded="false" />
-            <element signature="e#2023#2672#0" expanded="false" />
-            <element signature="e#2767#2933#0" expanded="false" />
+            <element signature="e#293#492#0" expanded="false" />
+            <element signature="e#522#635#0" expanded="false" />
+            <element signature="e#1233#2009#0" expanded="false" />
+            <element signature="e#2032#2797#0" expanded="false" />
+            <element signature="e#2075#2724#0" expanded="false" />
+            <element signature="e#2819#2985#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -876,15 +876,15 @@
     <entry file="file://$PROJECT_DIR$/mysite/jsonparse.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="567">
-          <caret line="116" column="20" selection-start-line="116" selection-start-column="20" selection-end-line="116" selection-end-column="20" />
+          <caret line="105" column="14" selection-start-line="105" selection-start-column="14" selection-end-line="105" selection-end-column="14" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#294#493#0" expanded="false" />
-            <element signature="e#523#636#0" expanded="false" />
-            <element signature="e#1181#1957#0" expanded="false" />
-            <element signature="e#1980#2745#0" expanded="false" />
-            <element signature="e#2023#2672#0" expanded="false" />
-            <element signature="e#2767#2933#0" expanded="false" />
+            <element signature="e#293#492#0" expanded="false" />
+            <element signature="e#522#635#0" expanded="false" />
+            <element signature="e#1233#2009#0" expanded="false" />
+            <element signature="e#2032#2797#0" expanded="false" />
+            <element signature="e#2075#2724#0" expanded="false" />
+            <element signature="e#2819#2985#0" expanded="false" />
           </folding>
         </state>
       </provider>
