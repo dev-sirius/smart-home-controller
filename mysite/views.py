@@ -51,8 +51,9 @@ def API(request):
 
 
 def set(request):
+    assert isinstance(request, HttpRequest)
     if request.method == 'POST':
-        jsonPost = str(request.POST.get('data'))
+        jsonPost = request.body
         if jsonPost == None:
             resp = HttpResponse()
             resp.status_code = 406

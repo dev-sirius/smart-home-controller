@@ -5,7 +5,7 @@ from django.utils import timezone
 import hashlib
 from . import dbwork
 import time
-import Rpi.GPIO as GPIO
+import RPi.GPIO as GPIO
 
 # isInitGPIO = False
 transporter = Transport.TransportProtocol()
@@ -56,7 +56,7 @@ def set(text):
         Type = etext['type']
         if Type == 'LIGHT':
             try:
-                LightControl.setLight(etext['value'])
+                LightControl.setLight(int(etext['value']))
             except KeyError:
                 pass
 
