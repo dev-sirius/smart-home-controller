@@ -60,7 +60,7 @@ def set(request):
             resp.status_code = 406
             resp.write('Required argument not found.')
             return resp
-        return HttpResponse(jsonparse.verificate(jsonPost))
+        jsons = jsonparse.verificate(jsonPost)
         if jsons != None:
             return HttpResponse(jsonparse.set(jsons))
         else:
