@@ -54,7 +54,7 @@ def set(request):
     assert isinstance(request, HttpRequest)
     if request.method == 'POST':
         jsonPost = request.body
-        return jsonPost
+        return HttpResponse(jsonPost)
         if jsonPost == None:
             resp = HttpResponse()
             resp.status_code = 406
