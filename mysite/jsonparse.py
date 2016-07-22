@@ -9,6 +9,7 @@ import RPi.GPIO as GPIO
 
 isInitGPIO = True
 transporter = Transport.TransportProtocol()
+global pin
 
 
 def verificate(request):
