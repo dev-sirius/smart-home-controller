@@ -114,3 +114,4 @@ def initGPIO():
     GPIO.setup(21, GPIO.OUT)
     pin = GPIO.PWM(21, 200)
     pin.start(0)
+    isInitGPIO =True
