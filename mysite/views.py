@@ -12,8 +12,8 @@ from django.http import HttpResponseRedirect
 def index(request):
     assert isinstance(request,HttpRequest)
     if request.user.is_authenticated():
-        temp = dbwork.outOfDB('TEMPERATURE')
-        light = dbwork.outOfDB('LIGHT')
+        temp = int(dbwork.outOfDB('TEMPERATURE'))
+        light = int(dbwork.outOfDB('LIGHT'))
         return HttpResponse(temp+'//s'+light)
         #return render_to_response('index.html', {'temperature': temp, 'light': light})
         #return render_to_response('index.html')
