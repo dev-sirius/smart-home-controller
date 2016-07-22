@@ -14,7 +14,7 @@ def index(request):
     if request.user.is_authenticated():
         temp = int(dbwork.outOfDB('TEMPERATURE'))
         light = int(dbwork.outOfDB('LIGHT'))
-        return HttpResponse(temp+'//s'+light)
+        return HttpResponse(str(temp)+'//'+str(light))
         #return render_to_response('index.html', {'temperature': temp, 'light': light})
         #return render_to_response('index.html')
     else:
