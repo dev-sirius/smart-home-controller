@@ -59,14 +59,14 @@
         <entry file="file://$PROJECT_DIR$/mysite/jsonparse.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="450">
-              <caret line="38" column="31" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="31" />
+              <caret line="38" column="27" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
-                <element signature="e#971#1084#0" expanded="false" />
-                <element signature="e#1426#2202#0" expanded="false" />
-                <element signature="e#2225#2990#0" expanded="false" />
-                <element signature="e#2268#2917#0" expanded="false" />
-                <element signature="e#3012#3178#0" expanded="false" />
+                <element signature="e#1000#1113#0" expanded="false" />
+                <element signature="e#1455#2231#0" expanded="false" />
+                <element signature="e#2254#3019#0" expanded="false" />
+                <element signature="e#2297#2946#0" expanded="false" />
+                <element signature="e#3041#3207#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -437,11 +437,11 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#971#1084#0" expanded="false" />
-            <element signature="e#1426#2202#0" expanded="false" />
-            <element signature="e#2225#2990#0" expanded="false" />
-            <element signature="e#2268#2917#0" expanded="false" />
-            <element signature="e#3012#3178#0" expanded="false" />
+            <element signature="e#1000#1113#0" expanded="false" />
+            <element signature="e#1455#2231#0" expanded="false" />
+            <element signature="e#2254#3019#0" expanded="false" />
+            <element signature="e#2297#2946#0" expanded="false" />
+            <element signature="e#3041#3207#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -489,11 +489,11 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#971#1084#0" expanded="false" />
-            <element signature="e#1426#2202#0" expanded="false" />
-            <element signature="e#2225#2990#0" expanded="false" />
-            <element signature="e#2268#2917#0" expanded="false" />
-            <element signature="e#3012#3178#0" expanded="false" />
+            <element signature="e#1000#1113#0" expanded="false" />
+            <element signature="e#1455#2231#0" expanded="false" />
+            <element signature="e#2254#3019#0" expanded="false" />
+            <element signature="e#2297#2946#0" expanded="false" />
+            <element signature="e#3041#3207#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -541,11 +541,11 @@
           <caret line="24" column="40" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#971#1084#0" expanded="false" />
-            <element signature="e#1426#2202#0" expanded="false" />
-            <element signature="e#2225#2990#0" expanded="false" />
-            <element signature="e#2268#2917#0" expanded="false" />
-            <element signature="e#3012#3178#0" expanded="false" />
+            <element signature="e#1000#1113#0" expanded="false" />
+            <element signature="e#1455#2231#0" expanded="false" />
+            <element signature="e#2254#3019#0" expanded="false" />
+            <element signature="e#2297#2946#0" expanded="false" />
+            <element signature="e#3041#3207#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -802,14 +802,14 @@
     <entry file="file://$PROJECT_DIR$/mysite/jsonparse.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
-          <caret line="38" column="31" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="31" />
+          <caret line="38" column="27" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#971#1084#0" expanded="false" />
-            <element signature="e#1426#2202#0" expanded="false" />
-            <element signature="e#2225#2990#0" expanded="false" />
-            <element signature="e#2268#2917#0" expanded="false" />
-            <element signature="e#3012#3178#0" expanded="false" />
+            <element signature="e#1000#1113#0" expanded="false" />
+            <element signature="e#1455#2231#0" expanded="false" />
+            <element signature="e#2254#3019#0" expanded="false" />
+            <element signature="e#2297#2946#0" expanded="false" />
+            <element signature="e#3041#3207#0" expanded="false" />
           </folding>
         </state>
       </provider>
